@@ -15,19 +15,6 @@ function abort
 }
 
 
-function usage
-{
-    echo ""
-}
-
-
-if [ "$1" == "-h" ] || [ "$1" == "--h" ];
-then
-    usage
-    abort
-fi
-
-
 
 
 TERMUX_SETUP_REPO="https://github.com/arithesage/termux-setup.git"
