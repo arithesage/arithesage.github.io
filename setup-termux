@@ -36,6 +36,7 @@ then
 fi
 
 
+echo ""
 echo "Checking available packages..."
 echo "------------------------------"
 
@@ -70,7 +71,7 @@ fi
 echo ""
 
 
-echo "$NEEDED_PACKAGES" | grep openssh
+echo "$NEEDED_PACKAGES" | grep openssh > /dev/null
 
 if [ "$?" == "0" ];
 then
@@ -80,7 +81,13 @@ then
     echo "Please, enter a password for login."
     echo ""
 
-    passwd
+    PASSWD_OK="1"
+
+    while ! [ "$PASSWD_OK" == "0" ];
+    do
+        passwd
+        PASSWD_OK=$?
+    done
 fi
 
 
