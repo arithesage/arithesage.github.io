@@ -39,7 +39,7 @@ function install
 
 
 NEEDED_PACKAGES=""
-WINE_SETUP_REPO="https://github.com/arithesage/termux-setup.git"
+WINE_SETUP_REPO="https://github.com/arithesage/wine-setup.git"
 
 cat /etc/os-release | grep debian > /dev/null
 
@@ -57,6 +57,7 @@ then
     fi
 
 elif ! [ -f "/usr/bin/git" ];
+then
     NEEDED_PACKAGES+="git"
 fi
 
