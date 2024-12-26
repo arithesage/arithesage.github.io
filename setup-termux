@@ -58,7 +58,7 @@ then
     NEEDED_PACKAGES+="openssh "
 fi
 
-if ! [ .f "$PREFIX/bin/screen" ];
+if ! [ -f "$PREFIX/bin/screen" ];
 then
     NEEDED_PACKAGES+="screen"
 fi
